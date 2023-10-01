@@ -1,13 +1,9 @@
-package employee.version1;
+package employee.version2;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class HourlyEmployee {
-    private int empID;
-    private String empName;
-    private Date empDateHired;
-    private Date empBirthDate;
+public class HourlyEmployee extends Employee{
     private float totalHoursWorked;
     private float ratePerHour;
     private SimpleDateFormat date = new SimpleDateFormat("MM/dd/yyyy");
@@ -37,38 +33,15 @@ public class HourlyEmployee {
     }
 
     // Setters and Getters
-    void setEmpName(String empName) {
-        this.empName = empName;
-    }
-
     void setTotalHoursWorked(float totalHoursWorked) {
         this.totalHoursWorked = totalHoursWorked;
     }
-
     void setRatePerHour(float ratePerHour) {
         this.ratePerHour = ratePerHour;
     }
-
-    int getEmpID() {
-        return empID;
-    }
-
-    String getEmpName() {
-        return empName;
-    }
-
-    Date getEmpDateHired() {
-        return empDateHired;
-    }
-
-    Date getEmpBirthDate() {
-        return empBirthDate;
-    }
-
     float getTotalHoursWorked() {
         return totalHoursWorked;
     }
-
     float getRatePerHour() {
         return ratePerHour;
     }

@@ -1,12 +1,8 @@
-package employee.version1;
+package employee.version2;
 
 import java.util.Date;
 
-public class CommissionEmployee {
-    private int empID;
-    private String empName;
-    private Date empDateHired;
-    private Date empBirthDate;
+public class CommissionEmployee extends Employee{
     private double totalSales;
 
     //Constructors
@@ -30,39 +26,7 @@ public class CommissionEmployee {
         this.totalSales = totalSales;
     }
 
-    //Setters and Getters
-    public int getEmpID() {
-        return empID;
-    }
-
-    public void setEmpID(int empID) {
-        this.empID = empID;
-    }
-
-    public String getEmpName() {
-        return empName;
-    }
-
-    public void setEmpName(String empName) {
-        this.empName = empName;
-    }
-
-    public Date getEmpDateHired() {
-        return empDateHired;
-    }
-
-    public void setEmpDateHired(Date empDateHired) {
-        this.empDateHired = empDateHired;
-    }
-
-    public Date getEmpBirthDate() {
-        return empBirthDate;
-    }
-
-    public void setEmpBirthDate(Date empBirthDate) {
-        this.empBirthDate = empBirthDate;
-    }
-
+    // Setters and Getters
     public double getTotalSales() {
         return totalSales;
     }
@@ -71,7 +35,7 @@ public class CommissionEmployee {
         this.totalSales = totalSales;
     }
 
-    //Methods
+    // Methods
     double computeSalary(){
         double Salary = 0;
 

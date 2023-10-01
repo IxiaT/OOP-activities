@@ -1,11 +1,7 @@
-package employee.version1;
+package employee.version3;
 
 import java.util.Date;
-public class PieceWorkerEmployee {
-    private int empID;
-    private String empName;
-    private Date empDateHired;
-    private Date empBirthDate;
+public class PieceWorkerEmployee extends Employee {
     private int totalPiecesFinished;
     private float ratePerPiece;
 
@@ -14,18 +10,48 @@ public class PieceWorkerEmployee {
 
     }
 
-    public PieceWorkerEmployee(int empID, String empName, Date empDateHired, Date empBirthDate) {
+    public PieceWorkerEmployee(int empID, String firstName, String middleName, String lastName, String suffix, Date empDateHired, Date empBirthDate) {
         this.empID = empID;
-        this.empName = empName;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.suffix = suffix;
         this.empDateHired = empDateHired;
         this.empBirthDate = empBirthDate;
         this.totalPiecesFinished = 0;
         this.ratePerPiece = 0;
     }
 
-    public PieceWorkerEmployee(int empID, String empName, Date empDateHired, Date empBirthDate, int totalPiecesFinished, float ratePerPiece) {
+    public PieceWorkerEmployee(int empID, String firstName, String middleName, String lastName, Date empDateHired, Date empBirthDate) {
         this.empID = empID;
-        this.empName = empName;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.suffix = "";
+        this.empDateHired = empDateHired;
+        this.empBirthDate = empBirthDate;
+        this.totalPiecesFinished = 0;
+        this.ratePerPiece = 0;
+    }
+
+    public PieceWorkerEmployee(int empID, String firstName, String middleName, String lastName, String suffix, Date empDateHired, Date empBirthDate, int totalPiecesFinished, float ratePerPiece) {
+        this.empID = empID;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.suffix = suffix;
+        this.empDateHired = empDateHired;
+        this.empBirthDate = empBirthDate;
+        this.totalPiecesFinished = totalPiecesFinished;
+        this.ratePerPiece = ratePerPiece;
+    }
+
+    public PieceWorkerEmployee(int empID, String firstName, String middleName, String lastName, Date empDateHired, Date empBirthDate, int totalPiecesFinished, float ratePerPiece) {
+        this.empID = empID;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.suffix = "";
         this.empDateHired = empDateHired;
         this.empBirthDate = empBirthDate;
         this.totalPiecesFinished = totalPiecesFinished;
@@ -33,39 +59,6 @@ public class PieceWorkerEmployee {
     }
 
     // Setters and Getters
-
-    public int getEmpID() {
-        return empID;
-    }
-
-    public void setEmpID(int empID) {
-        this.empID = empID;
-    }
-
-    public String getEmpName() {
-        return empName;
-    }
-
-    public void setEmpName(String empName) {
-        this.empName = empName;
-    }
-
-    public Date getEmpDateHired() {
-        return empDateHired;
-    }
-
-    public void setEmpDateHired(Date empDateHired) {
-        this.empDateHired = empDateHired;
-    }
-
-    public Date getEmpBirthDate() {
-        return empBirthDate;
-    }
-
-    public void setEmpBirthDate(Date empBirthDate) {
-        this.empBirthDate = empBirthDate;
-    }
-
     public int getTotalPiecesFinished() {
         return totalPiecesFinished;
     }
@@ -102,7 +95,11 @@ public class PieceWorkerEmployee {
     public void displayInfo() {
         System.out.println("Piece Worker Employee");
         System.out.println("ID: " + empID);
-        System.out.println("Name: " + empName);
+        if(suffix.isEmpty()){
+            System.out.println("Name: " + firstName + " " + middleName.charAt(0) + ". " + lastName);
+        } else {
+            System.out.println("Name: " + firstName + " " + middleName.charAt(0) + ". " + lastName + " " + suffix);
+        }
         System.out.println("Date Hired: " + empDateHired);
         System.out.println("Date of Birth: " + empBirthDate);
         System.out.println("Total Pieces Finished: " + totalPiecesFinished);
@@ -114,7 +111,7 @@ public class PieceWorkerEmployee {
     public String toString() {
         return "PieceWorkerEmployee{" +
                 "empID=" + empID +
-                ", empName='" + empName + '\'' +
+                ", empName=" + firstName + " " + middleName.charAt(0) + ". " + lastName +
                 ", empDateHired=" + empDateHired +
                 ", empBirthDate=" + empBirthDate +
                 ", totalPiecesFinished=" + totalPiecesFinished +
