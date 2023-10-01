@@ -10,7 +10,7 @@ public class CommissionEmployee extends Employee {
 
     }
 
-    public CommissionEmployee(int empID, String firstName, String middleName, String lastName, String suffix, String empName, Date empDateHired, Date empBirthDate) {
+    public CommissionEmployee(int empID, String firstName, String middleName, String lastName, String suffix, Date empDateHired, Date empBirthDate) {
         this.empID = empID;
         this.firstName = firstName;
         this.middleName = middleName;
@@ -21,7 +21,7 @@ public class CommissionEmployee extends Employee {
         this.totalSales = 0;
     }
 
-    public CommissionEmployee(int empID, String firstName, String middleName, String lastName, String empName, Date empDateHired, Date empBirthDate) {
+    public CommissionEmployee(int empID, String firstName, String middleName, String lastName, Date empDateHired, Date empBirthDate) {
         this.empID = empID;
         this.firstName = firstName;
         this.middleName = middleName;
